@@ -1,0 +1,32 @@
+[
+	{
+		"name": "Normann Cph - Norm69",
+		"price": 650.00,
+		"image": "img/1.jpg",
+		"category": "Loftslampe"
+	},
+	{
+		"name": "Illumin Drip/Drop ",
+		"price": 999.00 ,
+		"image": "img/2.jpg",
+		"category": "Loftslampe"
+	},
+	{
+		"name": "Flowerpot ",
+		"price": 1695.00,
+		"image": "img/3.jpg",
+		"category": "Bordlampe"
+	},
+	{
+		"name": "House Doctor - Game",
+		"price": 1650.00,
+		"image": "img/4.jpg",
+		"category": "Bordlampe"
+	},
+	{
+		"name": "And Tradition Bellevue",
+		"price": 3995.00,
+		"image": "img/5.jpg",
+		"category": "Gulvlampe"
+	}
+]

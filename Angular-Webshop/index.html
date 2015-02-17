@@ -12,9 +12,22 @@
 	</head>
 	<body> <!--ng-controller="MainController"> Controlleren skal defimnerers i html dokumentet, men kan gøres flere steder -> mulighed for flere controllers-->
 
+
+		<div>
+			<h1>Lamps 4 Light</h1>
+
+			<h2>{{ error }}</h2>
+
+			<div ng-view>
+
+			</div>
+
+		</div>
+
+
 		<!-- Products -->
-		<div ng-controller="productsController">
-			<h1>Lamps 4 Light Hallo!</h1>
+		<!-- <div ng-controller="productsController">
+			<h1>Lamps 4 Light</h1>
 
 			<h2>{{ error }}</h2>
 
@@ -26,7 +39,7 @@
 				</li>
 			</ul>
 
-			<!--{{ categoriesSelected }}-->
+
 
 			<div class="bla" ng-repeat="product in products | filter:productName | filter:categoryFilter">
 				<img class="img" src="{{ product.image }}" />	
@@ -37,8 +50,8 @@
 					<button type="submit">Add to cart</button>
 				</form>
 			</div>
-		</div>
-
+		</div> 
+ -->
 
 		<!-- CART -->
 		<div ng-controller="cartController">
@@ -59,6 +72,7 @@
 
 		<!-- AngularJS -->
 		<script src="angular/angular.min.js"></script>
+		<script src="angular-route/angular-route.min.js"></script> <!-- Er denne nødvendig?? -->
 		<!--<script src="js/app.js"></script>-->
 
 
@@ -69,5 +83,6 @@
 
 		<script src="cart/cart.controller.js"></script>
 		<script src="products/products.controller.js"></script>
+		<script src="products/product.controller.js"></script>
 	</body>
 </html>

@@ -7,7 +7,7 @@
 
 	function productsController($scope, productsService, cartService){
 		
-		$scope.categoriesSelected = new Array();
+		//$scope.categoriesSelected = new Array();
 
 		var modelProducts = function(data){
 			$scope.products = data;
@@ -23,7 +23,20 @@
 		}
 
 
+		var updateCategoriesSelected = function(){
+			$scope.categoriesSelected = productsService.getCategoriesSelected();
+		}
+
 		$scope.categoryChange = function(category){
+			productsService.categoryChange(category);
+			updateCategoriesSelected();
+		}
+
+		$scope.categoryFilter = function(product){
+			return productsService.categoryFilter(product);
+		}
+
+		/*$scope.categoryChange = function(category){
 			var i = $scope.categoriesSelected.indexOf(category);
 			if(i > -1){
 				$scope.categoriesSelected.splice(i, 1);
@@ -40,7 +53,7 @@
 				}
 			}
 			return product;
-		}
+		}*/
 
 		productsService.getProducts()
 			.then(modelProducts);

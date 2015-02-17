@@ -10,9 +10,7 @@
 			.bla{float: left;}
 		</style>
 	</head>
-	<body> <!--ng-controller="MainController"> Controlleren skal defimnerers i html dokumentet, men kan gøres flere steder -> mulighed for flere controllers-->
-
-
+	<body> 
 		<div>
 			<h1>Lamps 4 Light</h1>
 
@@ -23,35 +21,6 @@
 			</div>
 
 		</div>
-
-
-		<!-- Products -->
-		<!-- <div ng-controller="productsController">
-			<h1>Lamps 4 Light</h1>
-
-			<h2>{{ error }}</h2>
-
-			<input type="search" placeholder="Search product name" ng-model="productName" />
-
-			<ul>
-				<li ng-repeat="catObject in categories">
-					<input type="checkbox" ng-click="categoryChange(catObject.category)"> {{ catObject.category }}
-				</li>
-			</ul>
-
-
-
-			<div class="bla" ng-repeat="product in products | filter:productName | filter:categoryFilter">
-				<img class="img" src="{{ product.image }}" />	
-				<h3>{{ product.name }}</h3>
-				<p>{{ product.price }},- kr</p>
-				<form ng-submit="addToCart(product)">
-					<input type="number" ng-model="quantity" />
-					<button type="submit">Add to cart</button>
-				</form>
-			</div>
-		</div> 
- -->
 
 		<!-- CART -->
 		<div ng-controller="cartController">

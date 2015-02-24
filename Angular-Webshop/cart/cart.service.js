@@ -6,12 +6,55 @@
 		var addProductToCart = function(product, quantity){
 			$rootScope.cartProducts[product.name] = {
 				product: product,
-				quantity: quantity
+				quantity: quantity,
+				total: quantity * product.price
 			}
+
+			calcCartTotal(quantity * product.price);
+		}
+
+		var deleteProductFromCart = function(product){
+			var cartProduct = $rootScope.cartProducts[product.name];
+			var cartProductTotal = cartProduct.product.price * cartProduct.quantity;
+			calcCartTotal(cartProductTotal * -1);
+			delete $rootScope.cartProducts[product.name];
+			
+			console.log("slettet");
+		}
+
+		var addToQuantity = function(product){
+			calcProductTotal(product, 1);
+			calcCartTotal(product.price);
+			console.log("+1");
+		}
+
+		var deleteFromQuantity = function(product){
+			calcProductTotal(product, -1);
+			calcCartTotal(product.price * -1);
+			/*
+			if($rootScope.cartProducts[product.name].quantity > 1){
+				$rootScope.cartProducts[product.name].quantity -= 1;
+
+			}*/
+
+			console.log("-1");
+		}
+
+		var calcCartTotal = function(amount){
+			$rootScope.cartTotal += amount;
+		}
+
+		var calcProductTotal = function(product, quantity){
+			var cartProduct = $rootScope.cartProducts[product.name];
+			cartProduct.quantity += quantity;
+			cartProduct.total = cartProduct.quantity * cartProduct.product.price;
 		}
 
 		return{
-			addProductToCart: addProductToCart
+			addProductToCart: addProductToCart,
+			deleteProductFromCart: deleteProductFromCart,
+			addToQuantity: addToQuantity,
+			deleteFromQuantity: deleteFromQuantity
 		}
 	}
 

@@ -30,28 +30,35 @@
 					<th>Product</th>
 					<th>Price</th>
 					<th>Quantity</th>
+					<th>Total</th>
+					<th>Delete</th>
 				</tr>
 				<tr ng-repeat="cartProduct in cartProducts">
 					<td>{{cartProduct.product.name}}</td>
 					<td>{{cartProduct.product.price}},- kr</td>
-					<td>{{cartProduct.quantity}}</td>
+					<td>{{cartProduct.quantity}} <button ng-click="addToQuantity(cartProduct.product)" >+</button> <button ng-click="deleteFromQuantity(cartProduct.product)">-</button></td>
+					<td> {{cartProduct.total}}</td> <!--total pris for anatllet af producter-->
+					<td><button ng-click="deleteProductFromCart(cartProduct.product)">X</button></td>
 				</tr>
+
 			</table>
+			{{cartTotal}}
+			<a href="#/checkout" class="btn btn-warning">Gå til kassen</a>
 		</div>
 
 		<!-- AngularJS -->
 		<script src="angular/angular.min.js"></script>
-		<script src="angular-route/angular-route.min.js"></script> <!-- Er denne nødvendig?? -->
-		<!--<script src="js/app.js"></script>-->
-
+		<script src="angular-route/angular-route.min.js"></script> 
 
 		<script src="app.module.js"></script>
 
 		<script src="cart/cart.service.js"></script>
 		<script src="products/products.service.js"></script>
+		<script src="checkout/checkout.service.js"></script>
 
 		<script src="cart/cart.controller.js"></script>
 		<script src="products/products.controller.js"></script>
 		<script src="products/product.controller.js"></script>
+		<script src="checkout/checkout.controller.js"></script>
 	</body>
 </html>

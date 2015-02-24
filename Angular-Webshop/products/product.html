@@ -1,4 +1,11 @@
 <!-- Kun dette ene produkt vises -->
 
+<a href="#/product">Tilbage til produkterne</a>
+
 <h3>{{ product.name }}</h3>
 <p> {{ product.price }} DKK</p>
+
+<form ng-controller="productsController" ng-submit="addToCart(product)">
+	<input type="number" ng-model="quantity" />
+	<button type="submit">Add to cart</button>
+</form>

@@ -6,6 +6,6 @@
 <p> {{ product.price }} DKK</p>
 
 <form ng-controller="productsController" ng-submit="addToCart(product)">
-	<input type="number" ng-model="quantity" />
+	<input type="number" in="1" ng-model="quantity" />
 	<button type="submit">Add to cart</button>
 </form>

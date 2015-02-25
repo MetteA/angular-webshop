@@ -18,7 +18,7 @@
 		<p>{{ product.price }},- kr</p>
 	</a>
 	<form ng-submit="addToCart(product)">
-		<input type="number" ng-model="quantity" />
+		<input type="number" min="1" ng-model="quantity" />
 		<button type="submit">Add to cart</button>
 	</form>
 </div>

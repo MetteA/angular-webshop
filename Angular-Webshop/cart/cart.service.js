@@ -4,11 +4,16 @@
 	var cartService = function($http, $rootScope){
 
 		var addProductToCart = function(product, quantity){
-			$rootScope.cartProducts[product.name] = {
-				product: product,
-				quantity: quantity,
-				total: quantity * product.price
+			if($rootScope.cartProducts[product.name]){
+				$rootScope.cartProducts[product.name].quantity += quantity;
 			}
+			else{
+				$rootScope.cartProducts[product.name] = {
+					product: product,
+					quantity: quantity,
+					total: quantity * product.price
+				}
+			}	
 
 			calcCartTotal(quantity * product.price);
 		}
@@ -29,13 +34,10 @@
 		}
 
 		var deleteFromQuantity = function(product){
-			calcProductTotal(product, -1);
-			calcCartTotal(product.price * -1);
-			/*
 			if($rootScope.cartProducts[product.name].quantity > 1){
-				$rootScope.cartProducts[product.name].quantity -= 1;
-
-			}*/
+				calcProductTotal(product, -1);
+				calcCartTotal(product.price * -1);
+			}
 
 			console.log("-1");
 		}

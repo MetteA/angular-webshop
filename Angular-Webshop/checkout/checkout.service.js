@@ -1,7 +1,7 @@
 (function(){
 	"use strict";
 
-	var checkoutService = function($http, $rootScope){ // De orange skal måske ændres
+	var checkoutService = function($http, $rootScope){
 		//something here
 	}
 

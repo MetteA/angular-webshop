@@ -10,14 +10,14 @@
 			return $http.get("data/products.json")
 						.then(function(response){
 							return response.data;
-						}, getError)
+						}, getError);
 		}
 
 		var getProduct = function(id){
 			return $http.get("data/products.json")
 						.then(function(response){
 							return findProductInArray(response.data, id);
-						}, getError)
+						}, getError);
 		}
 
 		var findProductInArray = function(data,id){
@@ -32,7 +32,7 @@
 			return $http.get("data/categories.json")
 						.then(function(response){
 							return response.data;
-						}, getError)
+						}, getError);
 		}
 
 		var getError = function(reason){
@@ -77,4 +77,4 @@
 		.module("Main")
 		//bruger factory til at registerer denne service
 		.factory("productsService", productsService);
-}());
+})();

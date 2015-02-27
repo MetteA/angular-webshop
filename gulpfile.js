@@ -23,7 +23,7 @@ gulp.task('browser-sync', function(){
 //holder øje med æmndringer i html og js filer, og køre derefter tarsken browser-sync
 gulp.task("watch", function(){
 	gulp.watch([
-			"./Angular-Webshop/**.html", 
+			"./Angular-Webshop/**/*.html", 
 			'./Angular-Webshop/**/*.js',
 			'./Angular-Webshop/**/*.css'
 		], 

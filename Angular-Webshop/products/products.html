@@ -1,24 +1,25 @@
-<!--start siden hvor alle produkterne vises-->
+<!--Alle produkter vises-->
+<div class="products-site container-fluid">
+	
+	<input type="search" placeholder="Find your lamp!" ng-model="productName" />
+
+	<div class="checkbox" ng-repeat="catObject in categories">
+		<input  type="checkbox" ng-click="categoryChange(catObject.category)">{{ catObject.category }}
+	</div>
 
 
-<input type="search" placeholder="Search product name" ng-model="productName" />
+	<div class="row products">
+		<div class="col-md-4 product-box" ng-repeat="product in products | filter:productName | filter:categoryFilter">
 
-<ul>
-	<li ng-repeat="catObject in categories">
-		<input type="checkbox" ng-click="categoryChange(catObject.category)"> {{ catObject.category }}
-	</li>
-</ul>
-
-
-
-<div class="bla" ng-repeat="product in products | filter:productName | filter:categoryFilter">
-	<a ng-href="#/product/{{product.id}}">
-		<img class="img" src="{{ product.image }}" />	
-		<h3>{{ product.name }}</h3>
-		<p>{{ product.price }},- kr</p>
-	</a>
-	<form ng-submit="addToCart(product)">
-		<input type="number" min="1" ng-model="quantity" />
-		<button type="submit">Add to cart</button>
-	</form>
+			<a ng-href="#/product/{{product.id}}">
+				<img class="img-small" src="{{ product.image }}" />	
+				<h4>{{ product.name }}</h4>
+				<p>{{ product.price }},- kr</p>
+			</a>
+			<form ng-submit="addToCart(product)">
+				<input class="input-quantity" type="number" min="1" ng-model="quantity" />
+				<button class="btn btn-default" type="submit">Add to cart</button>
+			</form>
+		</div>
+	</div>
 </div>

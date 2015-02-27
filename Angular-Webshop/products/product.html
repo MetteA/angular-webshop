@@ -1,11 +1,15 @@
-<!-- Kun dette ene produkt vises -->
+<!-- Produkt siden -->
+<div class="product-site">
+	<a href="#/product" class="btn btn-default">Continue shopping</a>
 
-<a href="#/product">Tilbage til produkterne</a>
+	<h2>{{ product.name }}</h2>
+	<img class="img-large" src="{{ product.image }}">
+	<p class="description">{{ product.description }}</p>
+	</br>
+	<h4 class="price">Price: {{ product.price }},-</h4>
 
-<h3>{{ product.name }}</h3>
-<p> {{ product.price }} DKK</p>
-
-<form ng-controller="productsController" ng-submit="addToCart(product)">
-	<input type="number" in="1" ng-model="quantity" />
-	<button type="submit">Add to cart</button>
-</form>
+	<form class="add-to-cart" ng-controller="productsController" ng-submit="addToCart(product)">
+		<input class="input-quantity" type="number" min="1" ng-model="quantity" />
+		<button class="btn btn-default" type="submit">Add to cart</button>
+	</form>
+</div>

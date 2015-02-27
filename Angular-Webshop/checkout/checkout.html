@@ -1,24 +1,30 @@
-<h2>Chekout</h2>
-<a href="#/">Forsætte med at shoppe</a>
+<!--Checkout side-->
+<div class="checkout-site">
+	<a href="#/" class="btn btn-default">Forsætte med at shoppe</a>
 
-<h4>Customer Information</h4>
+	<h2>Chekout</h2>
 
-<label for="firstname">Firstname:</label>
-<input type="text" id="firstname" ng-model="user.firstname" />
+	<h4>Customer Information</h4>
 
-<label for="lastname">Lastname:</label>
-<input type="text" id="lastname" ng-model="user.lastname" />
+	<form>
+		<label for="firstname">Firstname:</label>
+		<input type="text" id="firstname" ng-model="user.firstname" />
 
-<label for="address">Address:</label>
-<input type="text" id="address" ng-model="user.address" />
+		<label for="lastname">Lastname:</label>
+		<input type="text" id="lastname" ng-model="user.lastname" />
 
-<label for="zip">Zip:</label>
-<input type="text" id="zip" ng-model="user.zip" />
+		<label for="address">Address:</label>
+		<input type="text" id="address" ng-model="user.address" />
 
-<label for="city">City:</label>
-<input type="text" id="city" ng-model="user.city" />
+		<label for="zip">Zip:</label>
+		<input type="text" id="zip" ng-model="user.zip" />
 
-<label for="email">Email:</label>
-<input type="text" id="email" ng-model="user.email" />
+		<label for="city">City:</label>
+		<input type="text" id="city" ng-model="user.city" />
 
-<button type="submit" ng-click="order()">Confirm order</button>	
+		<label for="email">Email:</label>
+		<input class="email" type="text" id="email" ng-model="user.email" />
+
+		<button class="btn btn-default confirm" type="submit" ng-click="order()">Confirm order</button>	
+	</form>
+</div>

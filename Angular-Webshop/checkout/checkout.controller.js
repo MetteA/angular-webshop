@@ -20,4 +20,4 @@
 			console.log($rootScope.cartProducts, userInfo);
 		}	
 	}
-}());
+})();

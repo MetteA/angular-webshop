@@ -1,45 +1,61 @@
 <!DOCTYPE html>
-<html ng-app="Main"> <!--Fortæller at det er en Angler app og bruger modulet Main-->
+<html ng-app="Main">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>Webshop</title>
+		<link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/min-css/style.css">
+		<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 	</head>
 	<body> 
-		<div>
-			<h1>Lamps 4 Light</h1>
-
+		<div class="container">
+			<header class="page-header">
+				<a href="#/product"><h1>Lamps 4 Light</h1></a>
+			</header>
+				
 			<h2>{{ error }}</h2>
 
-			<div ng-view>
+			<div class="row">
+				<!-- CART -->
+				<div class="cart">
+					<div ng-controller="cartController" class=" col-md-4 pull-right">
+						
+						<h3>Cart</h3>
 
+						<table class="table">
+							<tr>
+								<th>Product</th>
+								<th>Price</th>
+								<th>Quantity</th>
+								<th></th>
+								<th></th>
+								<th>Total</th>
+								<th></th>
+							</tr>
+							<tr ng-repeat="cartProduct in cartProducts">
+								<td>{{cartProduct.product.name}}</td>
+								<td>{{cartProduct.product.price}},-</td>
+								<td>{{cartProduct.quantity}} <button ng-click="addToQuantity(cartProduct.product)" >+</button><button ng-click="deleteFromQuantity(cartProduct.product)">-</button></td>
+								<td> </td>
+								
+								<td> {{cartProduct.total}},-</td> <!--total pris for anatllet af producter-->
+								<td><button ng-click="deleteProductFromCart(cartProduct.product)">X</button></td>
+							</tr>
+						</table>
+
+						<div class="pull-right">
+							<p><strong>Total: {{cartTotal}},-</strong> <a href="#/checkout" class="btn btn-default">Checkout</a></p>
+						</div>
+					</div>
+				</div>
+
+				<!--Products, product, checkout-->
+				<main>
+					<div ng-view>
+					</div>
+				</main>
 			</div>
-
-		</div>
-
-		<!-- CART -->
-		<div ng-controller="cartController">
-			<h3>Cart</h3>
-			<table>
-				<tr>
-					<th>Product</th>
-					<th>Price</th>
-					<th>Quantity</th>
-					<th>Total</th>
-					<th>Delete</th>
-				</tr>
-				<tr ng-repeat="cartProduct in cartProducts">
-					<td>{{cartProduct.product.name}}</td>
-					<td>{{cartProduct.product.price}},- kr</td>
-					<td>{{cartProduct.quantity}} <button ng-click="addToQuantity(cartProduct.product)" >+</button> <button ng-click="deleteFromQuantity(cartProduct.product)">-</button></td>
-					<td> {{cartProduct.total}}</td> <!--total pris for anatllet af producter-->
-					<td><button ng-click="deleteProductFromCart(cartProduct.product)">X</button></td>
-				</tr>
-
-			</table>
-			{{cartTotal}}
-			<a href="#/checkout" class="btn btn-warning">Gå til kassen</a>
 		</div>
 
 		<!-- AngularJS -->

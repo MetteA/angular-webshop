@@ -20,4 +20,4 @@
 		.module("Main.cart", [])
 		.controller("cartController", cartController);
 	
-}());
+})();

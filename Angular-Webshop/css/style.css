@@ -1,8 +1,117 @@
-img{
+/*Generelt*/
+body{
+	background-image: url(../tree_bark.png);
+}
+
+h1{
+	font-family: 'Montserrat', sans-serif;
+}
+
+a{
+ 	color: black;
+}
+
+a:hover{
+ 	color: black;
+	text-decoration: none;
+}
+
+input{
+	width: 300px;
+}
+
+.container{
+	width: 1000px;
+}
+
+main{
+	width: 590px;
+	padding-top: 20px;
+	margin-top: -20px;
+	margin-left: 20px;
+	background-image: url(../trans.png);
+}
+
+.cart{
+	margin-top: -20px;
+	padding-right: 5px;
+	padding-left: 5px;
+	width: 390px;
+	float: right;
+	background-image: url(../trans.png);
+}
+
+.checkbox{
+	margin: 5px;
+}
+
+/*Products.html*/
+.products-site{
+	margin-bottom: 20px;
+}
+
+.products{
+	padding-top: 20px; 
+}
+
+.product-box{
+	width: 220px;
+	margin-left: 20px; 
+	margin-top: 10px;
+	padding-left: 40px;
+	float: left;
+}
+
+.img-small{
 	width: 160px; 
 	height: 150px;
 }
-			
-.bla{
-	float: left;
+
+.input-quantity{
+	width: 70px;
+	margin-top: 10px;
 }
+
+
+/*Product.html*/
+.product-site{
+	margin-left: 20px;
+}
+
+.img-large{
+	width: 460px; 
+	height: 450px;
+	padding-left: 50px;
+	margin-bottom: 20px;
+}
+
+.description{
+	padding-right: 30px;
+}
+
+.price{
+	padding-bottom: 20px;
+}
+
+.add-to-cart{
+	float: right;
+	margin-top: -70px;
+	margin-right: 30px;
+}
+
+/*Checkout.html*/
+.checkout-site{
+	margin-left: 20px;
+	padding-bottom: 20px;
+}
+
+.email{
+	margin-bottom: 0px;
+}
+
+.confirm{
+	float: right;
+	margin-right: 30px;
+	margin-bottom: 50px; 
+}
+

@@ -4,18 +4,24 @@
 	var cartService = function($http, $rootScope){
 
 		var addProductToCart = function(product, quantity){
-			if($rootScope.cartProducts[product.name]){
-				$rootScope.cartProducts[product.name].quantity += quantity;
-			}
-			else{
-				$rootScope.cartProducts[product.name] = {
-					product: product,
-					quantity: quantity,
-					total: quantity * product.price
+			if(quantity > 0) {
+				var cartProduct = $rootScope.cartProducts[product.name]
+				if(cartProduct){
+					cartProduct.quantity += quantity;
+					cartProduct.total = cartProduct.quantity * cartProduct.product.price;
 				}
+				else{
+					$rootScope.cartProducts[product.name] = {
+						product: product,
+						quantity: quantity,
+						total: quantity * product.price
+					}
+				}	
+				calcCartTotal(quantity * product.price);
 			}	
-
-			calcCartTotal(quantity * product.price);
+			else{
+				console.log("Vælg et antal");
+			}
 		}
 
 		var deleteProductFromCart = function(product){
@@ -38,7 +44,6 @@
 				calcProductTotal(product, -1);
 				calcCartTotal(product.price * -1);
 			}
-
 			console.log("-1");
 		}
 

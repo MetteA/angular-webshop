@@ -17,7 +17,7 @@ mongoose.connect("mongodb://localhost/" + dbName);
 
 var db = mongoose.connection;
 db.on("error", console.error);
-db.once("open", deleteProducts);
+db.once("open", deleteProducts); //også deleteCategory
 
 
 // function insertCategories(){

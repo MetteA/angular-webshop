@@ -7,7 +7,8 @@
 			"Main.products",
 			"Main.product", 
 			"Main.cart",
-			"Main.checkout"
+			"Main.checkout",
+			"Main.admin"
 			]
 		)
 
@@ -27,6 +28,14 @@
 				.when('/product/:id',{
 					templateUrl: './products/product.html',
 					controller: 'productController'
+				})
+				.when('/admin',{
+					templateUrl: './admin/admin.html',
+					controller: 'adminController'
+				})
+				.when('/admin/update-product/:id',{
+					templateUrl: './admin/updateProduct.html',
+					controller: 'adminController'
 				})
 				.when("/", {
 					templateUrl: './products/products.html',

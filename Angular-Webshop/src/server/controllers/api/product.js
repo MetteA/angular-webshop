@@ -10,10 +10,20 @@ var product = {
     res.send(req.body);
   },
   update: function(req, res, next){
-    res.json({type: "Update", id: req.params.id, body: req.body });
+    var id = req.params.id;
+    Products.findByIdAndUpdate(id, {$set: req.body}, function(err, product){
+      if(err) console.error;
+      res.send(product);
+    })
+
+    // res.json({type: "Update", id: req.params.id, body: req.body });
   },
   delete: function(req, res, next){
-    res.json({type: "Delete", id: req.params.id});
+    Products.findByIdAndRemove(req.params.id, function(err, data){
+      if(err) console.error;
+      res.json(data);
+    })
+    // res.json({type: "Delete", id: req.params.id});
   },
   getAll: function(req, res, next){
     Products.find(function(err, data){

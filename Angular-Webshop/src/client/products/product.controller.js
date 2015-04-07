@@ -1,4 +1,6 @@
 (function(){
+	"use strict";
+
 	angular
 		.module("Main.product", [])
 		.controller("productController", productController);

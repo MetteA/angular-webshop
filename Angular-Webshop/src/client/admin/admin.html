@@ -1,0 +1,22 @@
+<!-- Admin delen vises -->
+<div class="admin-site">
+	<h1>Admin del</h1>
+	
+	
+	<table class="">
+		<tr>
+			<th>Product</th>
+			<!-- <th>Button</th> -->
+		</tr>
+		<tr ng-repeat="product in products">
+			<td>{{ product.name }}</td>
+			<td>
+				<a href="/#/admin/update-product/{{product._id}}" class="btn btn-default">Update</a>
+				<!-- <button class="btn btn-default" type="submit" ng-click="updateProduct(product._id)">Update</button>	 -->
+				<button class="btn btn-default" type="submit" ng-click="deleteProduct(product._id)">Delete</button>	
+
+			</td>
+		</tr>
+
+	</table>
+</div>

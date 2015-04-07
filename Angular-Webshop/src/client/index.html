@@ -5,13 +5,16 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>Webshop</title>
 		<link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="css/min-css/style.css">
+		<!-- <link rel="stylesheet" type="text/css" href="css/min-css/style.css"> -->
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
 		<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 	</head>
 	<body> 
 		<div class="container">
 			<header class="page-header">
 				<a href="#/product"><h1>Lamps 4 Light</h1></a>
+				<a href="#/admin">Log in</a>
 			</header>
 				
 			<h2>{{ error }}</h2>
@@ -50,7 +53,7 @@
 					</div>
 				</div>
 
-				<!--Products, product, checkout-->
+				<!--Products, product, checkout, admin-->
 				<main>
 					<div ng-view>
 					</div>
@@ -67,10 +70,12 @@
 		<script src="cart/cart.service.js"></script>
 		<script src="products/products.service.js"></script>
 		<script src="checkout/checkout.service.js"></script>
+		<script src="admin/admin.service.js"></script>
 
 		<script src="cart/cart.controller.js"></script>
 		<script src="products/products.controller.js"></script>
 		<script src="products/product.controller.js"></script>
 		<script src="checkout/checkout.controller.js"></script>
+		<script src="admin/admin.controller.js"></script>
 	</body>
 </html>

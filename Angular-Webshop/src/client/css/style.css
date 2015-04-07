@@ -1,6 +1,6 @@
 /*Generelt*/
 body{
-	background-image: url(../tree_bark.png);
+	background-image: url(tree_bark.png);
 }
 
 h1{
@@ -29,7 +29,7 @@ main{
 	padding-top: 20px;
 	margin-top: -20px;
 	margin-left: 20px;
-	background-image: url(../trans.png);
+	background-image: url(trans.png);
 }
 
 .cart{
@@ -38,7 +38,7 @@ main{
 	padding-left: 5px;
 	width: 390px;
 	float: right;
-	background-image: url(../trans.png);
+	background-image: url(trans.png);
 }
 
 .checkbox{
@@ -115,3 +115,8 @@ main{
 	margin-bottom: 50px; 
 }
 
+/*Admin.html*/
+.admin-site{
+	margin-left: 20px;
+	padding-bottom: 5px;
+}

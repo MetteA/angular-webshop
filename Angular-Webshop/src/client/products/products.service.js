@@ -22,7 +22,7 @@
 
 		var findProductInArray = function(data, id){
 			return data.filter(function(element){
-				if(element.id === id){
+				if(element._id === id){
 					return element;
 				}
 			})

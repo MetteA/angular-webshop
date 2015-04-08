@@ -37,6 +37,10 @@
 					templateUrl: './admin/updateProduct.html',
 					controller: 'adminController'
 				})
+				.when('/admin/add-product',{
+					templateUrl: './admin/addProduct.html',
+					controller: 'adminController'
+				})
 				.when("/", {
 					templateUrl: './products/products.html',
 					controller: 'productsController'

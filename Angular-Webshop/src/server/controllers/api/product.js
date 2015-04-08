@@ -7,7 +7,11 @@ var product = {
     res.json({type: "Read", id: req.params.id});
   },
   create: function(req, res, next){
-    res.send(req.body);
+    var product = new Products(req.body);
+    product.save(function(err, data){
+      if(err) console.error;
+      res.send(product);
+    })
   },
   update: function(req, res, next){
     var id = req.params.id;
@@ -15,15 +19,12 @@ var product = {
       if(err) console.error;
       res.send(product);
     })
-
-    // res.json({type: "Update", id: req.params.id, body: req.body });
   },
   delete: function(req, res, next){
     Products.findByIdAndRemove(req.params.id, function(err, data){
       if(err) console.error;
       res.json(data);
     })
-    // res.json({type: "Delete", id: req.params.id});
   },
   getAll: function(req, res, next){
     Products.find(function(err, data){

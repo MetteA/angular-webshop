@@ -19,6 +19,12 @@ var db = mongoose.connection;
 db.on("error", console.error);
 db.once("open", deleteProducts); //også deleteCategory
 
+// function deleteCategory() {
+// 	Category.remove({}, function(err){
+// 		if(err) console.log(err);
+// 		insertCategories();
+// 	});
+// }
 
 // function insertCategories(){
 // 	Category.create(

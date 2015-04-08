@@ -5,6 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>Webshop</title>
 		<link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+		<!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
 		<!-- <link rel="stylesheet" type="text/css" href="css/min-css/style.css"> -->
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 
@@ -32,18 +33,24 @@
 								<th>Price</th>
 								<th>Quantity</th>
 								<th></th>
-								<th></th>
-								<th>Total</th>
+								<th class="total">Total</th>
 								<th></th>
 							</tr>
 							<tr ng-repeat="cartProduct in cartProducts">
 								<td>{{cartProduct.product.name}}</td>
 								<td>{{cartProduct.product.price}},-</td>
-								<td>{{cartProduct.quantity}} <button ng-click="addToQuantity(cartProduct.product)" >+</button><button ng-click="deleteFromQuantity(cartProduct.product)">-</button></td>
-								<td> </td>
+								<div >
+								<td class="left">{{cartProduct.quantity}} 
+									
+										<button class="btn btn-default btn-xs cart-button" ng-click="addToQuantity(cartProduct.product)" >+</button>
+										<button class="btn btn-default btn-xs cart-button" ng-click="deleteFromQuantity(cartProduct.product)">-</button>
+									
+								</td>
+								</div>
+								<td></td>
 								
 								<td> {{cartProduct.total}},-</td> <!--total pris for anatllet af producter-->
-								<td><button ng-click="deleteProductFromCart(cartProduct.product)">X</button></td>
+								<td><button class="btn btn-default btn-xs cart-button" ng-click="deleteProductFromCart(cartProduct.product)">X</button></td>
 							</tr>
 						</table>
 
@@ -62,8 +69,8 @@
 		</div>
 
 		<!-- AngularJS -->
-		<script src="angular/angular.min.js"></script>
-		<script src="angular-route/angular-route.min.js"></script> 
+		<script src="node_modules/angular/angular.min.js"></script>
+		<script src="node_modules/angular-route/angular-route.min.js"></script> 
 
 		<script src="app.module.js"></script>
 

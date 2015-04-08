@@ -15,6 +15,12 @@
 				$scope.product = productArray[0];
 			}
 
+			$scope.addProduct= function(product){
+				console.log("Added!")
+				var product = this.product;
+				adminService.addProduct(product)
+			}	
+
 			$scope.updateProduct = function(id){
 				console.log("Update")
 				var product = this.product;
@@ -22,15 +28,12 @@
 			}
 
 			$scope.deleteProduct = function(id){
-				console.log("SUPER!")
+				console.log("Delete!")
 				adminService.deleteProduct(id)
 				.then(productsService.getProducts()
 						.then(modelProducts))
 			}
 
-			// $scope.addProduct = function(){
-
-			// }
 
 
 			productsService.getProducts()

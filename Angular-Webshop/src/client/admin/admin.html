@@ -1,9 +1,12 @@
 <!-- Admin delen vises -->
 <div class="admin-site">
-	<h1>Admin del</h1>
+	<h1>Welcome to Admin</h1>
 	
-	
-	<table class="">
+	<h4>You can add a new product:</h4>
+	<a href="/#/admin/add-product" class="btn btn-default">Add product</a>
+
+	<h4>Update or delete an exststing product:</h4>
+	<table>
 		<tr>
 			<th>Product</th>
 			<!-- <th>Button</th> -->
@@ -12,7 +15,6 @@
 			<td>{{ product.name }}</td>
 			<td>
 				<a href="/#/admin/update-product/{{product._id}}" class="btn btn-default">Update</a>
-				<!-- <button class="btn btn-default" type="submit" ng-click="updateProduct(product._id)">Update</button>	 -->
 				<button class="btn btn-default" type="submit" ng-click="deleteProduct(product._id)">Delete</button>	
 
 			</td>

@@ -29,7 +29,7 @@
 		}
 
 		var getCategories = function(){
-			return $http.get("data/categories.json")
+			return $http.get("/api/categories")
 						.then(function(response){
 							return response.data;
 						}, getError);

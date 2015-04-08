@@ -41,9 +41,28 @@ main{
 	background-image: url(trans.png);
 }
 
+.table{
+	width: 390px;
+}
+
+.cart-button{
+	padding: 6px;
+	line-height: 6px;
+}
+
+.left{
+	float: right;
+	width: 60px;
+}
+
+.total{
+	width: 45px;
+}
+
 .checkbox{
 	margin: 5px;
 }
+
 
 /*Products.html*/
 .products-site{

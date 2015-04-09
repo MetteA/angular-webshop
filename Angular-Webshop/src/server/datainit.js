@@ -1,9 +1,9 @@
 var mongoose = require("mongoose"),
 	dbName = "lamps4ligth";
 
-// var Category = mongoose.model("Category", {
-// 	category: String
-// })
+var Category = mongoose.model("Category", {
+	category: String
+})
 
 var Product = mongoose.model("Product", {
 	name: String,
@@ -17,28 +17,29 @@ mongoose.connect("mongodb://localhost/" + dbName);
 
 var db = mongoose.connection;
 db.on("error", console.error);
-db.once("open", deleteProducts); //også deleteCategory
+db.once("open", deleteProducts);
+db.once("open", deleteCategory);
 
-// function deleteCategory() {
-// 	Category.remove({}, function(err){
-// 		if(err) console.log(err);
-// 		insertCategories();
-// 	});
-// }
+function deleteCategory() {
+	Category.remove({}, function(err){
+		if(err) console.log(err);
+		insertCategories();
+	});
+}
 
-// function insertCategories(){
-// 	Category.create(
-// 		{
-// 			"category": "Ceiling Lamp"
-// 		},
-// 		{
-// 			"category": "Table lamp"
-// 		},
-// 		{
-// 			"category": "Floor lamp"
-// 		}
-// 	);
-// }
+function insertCategories(){
+	Category.create(
+		{
+			"category": "Ceiling Lamp"
+		},
+		{
+			"category": "Table lamp"
+		},
+		{
+			"category": "Floor lamp"
+		}
+	);
+}
 
 function deleteProducts() {
 	Product.remove({}, function(err){

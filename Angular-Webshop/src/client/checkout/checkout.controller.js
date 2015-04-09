@@ -5,19 +5,13 @@
 		.module("Main.checkout", [])
 		.controller("checkoutController", checkoutController);
 
-	function checkoutController($scope, $rootScope){
+	function checkoutController($scope, $rootScope, checkoutService){
 
-		$scope.order = function(){
-			var userInfo = {};
-			var u = $scope.user;
-			userInfo["firstname"] = u.firstname;
-			userInfo["lastname"] = u.lastname;
-			userInfo["address"] = u.address;
-			userInfo["zip"] = u.zip;
-			userInfo["city"] = u.city;
-			userInfo["email"] = u.email;
-
-			console.log($rootScope.cartProducts, userInfo);
+		$scope.saveOrder= function(order){
+			console.log("Order saved!")
+			var order = this.order;
+			var orderlines = $rootScope.cartProducts;
+			checkoutService.saveOrder(order, orderlines);
 		}	
 	}
 })();

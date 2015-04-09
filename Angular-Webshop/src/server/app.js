@@ -15,6 +15,7 @@ app.use(express.static(path.join(__dirname, '../client')));
 var router 	= express.Router();
 var product = require('./controllers/api/product');
 var category = require('./controllers/api/category');
+var order = require('./controllers/api/order');
 
 // Get all products
 router.get('/api/products', product.getAll);
@@ -30,6 +31,12 @@ router.route('/api/product/:id')
 
 // Get all categories
 router.get('/api/categories', category.getAll);
+
+// Get all orders
+router.get('/api/orders', order.getAll);
+
+//Save a order
+router.post('/api/order', order.create);
 
 // Register the routing
 app.use('/', router);

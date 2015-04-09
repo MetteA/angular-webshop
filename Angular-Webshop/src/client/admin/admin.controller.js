@@ -9,11 +9,15 @@
 			
 			var modelProducts = function(data){
 				$scope.products = data;
-			}	
+			}
 
 			var modelProduct = function(productArray){
 				$scope.product = productArray[0];
 			}
+
+			var modelOrders = function(data){
+				$scope.orders = data;
+			}	
 
 			$scope.addProduct= function(product){
 				console.log("Added!")
@@ -40,6 +44,9 @@
 			.then(modelProducts);
 
 			productsService.getProduct($routeParams.id)
-				.then(modelProduct);
+			.then(modelProduct);
+
+			adminService.getOrders()
+			.then(modelOrders);
 		}
 })();

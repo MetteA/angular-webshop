@@ -8,23 +8,23 @@
 
 	<form>
 		<label for="firstname">Firstname:</label>
-		<input type="text" id="firstname" ng-model="user.firstname" />
+		<input type="text" id="firstname" ng-model="order.firstname" />
 
 		<label for="lastname">Lastname:</label>
-		<input type="text" id="lastname" ng-model="user.lastname" />
+		<input type="text" id="lastname" ng-model="order.lastname" />
 
 		<label for="address">Address:</label>
-		<input type="text" id="address" ng-model="user.address" />
+		<input type="text" id="address" ng-model="order.address" />
 
 		<label for="zip">Zip:</label>
-		<input type="text" id="zip" ng-model="user.zip" />
+		<input type="text" id="zip" ng-model="order.zip" />
 
 		<label for="city">City:</label>
-		<input type="text" id="city" ng-model="user.city" />
+		<input type="text" id="city" ng-model="order.city" />
 
 		<label for="email">Email:</label>
-		<input class="email" type="text" id="email" ng-model="user.email" />
+		<input class="email" type="text" id="email" ng-model="order.email" />
 
-		<button class="btn btn-default confirm" type="submit" ng-click="order()">Confirm order</button>	
+		<button class="btn btn-default confirm" type="submit" ng-click="saveOrder()">Confirm order</button>	
 	</form>
 </div>

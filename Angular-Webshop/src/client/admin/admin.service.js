@@ -40,10 +40,23 @@
 						});
 		}
 
+		var getOrders = function(){
+			console.log('hej hej')
+			return $http.get("/api/orders")
+						.then(function(response){
+							return response.data;
+						}, getError);
+		}
+
+		var getError = function(reason){
+			$rootScope.error = "Der er sket en fejl";
+		}
+
 		return {
 			addProduct: addProduct,
 			updateProduct: updateProduct,
-			deleteProduct: deleteProduct
+			deleteProduct: deleteProduct,
+			getOrders: getOrders
 		}
 	}
 

@@ -32,6 +32,10 @@ main{
 	background-image: url(trans.png);
 }
 
+.login{
+	margin-top: -20px;
+}
+
 .cart{
 	margin-top: -20px;
 	padding-right: 5px;
@@ -138,4 +142,11 @@ main{
 .admin-site{
 	margin-left: 20px;
 	padding-bottom: 5px;
+}
+
+/*Show orders*/
+.order-site{
+	margin-left: 20px;
+	padding-bottom: 5px;
+
 }

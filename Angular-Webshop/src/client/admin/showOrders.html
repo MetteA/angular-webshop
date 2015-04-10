@@ -1,12 +1,17 @@
-<div>
-	<h1>Her viese orders</h1>
+<div class="order-site">
+	<h1>Orders</h1>
+	<a href="#/admin" class="btn btn-default">Back to admin</a>
+	<table class="table table-bordered">
+		<tr>
+			<th>Name:</th>
+			<th class="bla">Address:</th>
+			<th>Order:</th>
+		</tr>
+		<tr ng-repeat="order in orders">
+			<td>{{ order.firstname }} {{ order.lastname }}</td>
+			<td>{{ order.address }} {{ order.zip }} {{ order.city }}</td>
+			<td>{{ order.orderlines }}</td>
+		</tr>
 
-	
-
-	<div ng-repeat="order in orders">
-		{{ order.firstname }}
-		{{ order.lastname }}
-		{{ order.orderlines }}
-	</div>
-
+	</table>
 </div>
